@@ -13,7 +13,9 @@
     "serve": "zsh scripts/serve.sh",
     "test": "npm run testNode && npm run testWeb",
     "testNode": "JASMINE_CONFIG_PATH=./config/jasmine.json jasmine",
-    "testWeb": "karma start ./config/karma.all.conf.js"
+    "testWeb": "karma start ./config/karma.all.conf.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -33,7 +35,8 @@
     "foam2": "git://github.com/foam-framework/foam2.git",
     "jquery": "^3.2.1",
     "materialize-css": "^0.98.1",
-    "object-graph-js": "git://github.com/mdittmer/object-graph-js.git"
+    "object-graph-js": "git://github.com/mdittmer/object-graph-js.git",
+    "snyk": "^1.305.1"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -63,5 +66,6 @@
   },
   "eslintConfig": {
     "extends": "google"
-  }
+  },
+  "snyk": true
 }
